@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app  --timeout 15 --keep-alive 5 --log-level debug
+web: gunicorn -k uvicorn.workers.UvicornWorker app.main:app  --timeout 120 --keep-alive 60 --log-level debug
