@@ -26,4 +26,3 @@ class Prediction:
 
 
         return results
-import tflite.Model.
