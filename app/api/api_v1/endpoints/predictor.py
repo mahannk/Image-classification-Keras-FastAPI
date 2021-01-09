@@ -4,7 +4,7 @@ from ....dependencies.model import Prediction
 import numpy as np
 
 router = APIRouter()
-# predictor = Prediction()
+predictor = Prediction()
 
 @router.post("/")
 async def predict(reponse: Response, image: UploadFile = File(...)):
