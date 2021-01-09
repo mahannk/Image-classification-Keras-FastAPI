@@ -14,8 +14,8 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
         return {'message' : "File format not supported"}
     
     else:
-        # img = predictor.load_image(await image.read())
-        # results = predictor.predict(img)
+        img = predictor.load_image(await image.read())
+        results = predictor.predict(img)
 
         reponse.status_code = status.HTTP_202_ACCEPTED
 
