@@ -1,1 +1,1 @@
-web: uvicorn app.main:app --workers 4
+web: uvicorn app.main:app --workers 4  --timeout 15 --keep-alive 5 --log-level debug
