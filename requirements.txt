@@ -44,3 +44,5 @@ Werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.4.0
 uvloop==0.14.0
+httptools==0.1.1
+websockets==8.1
