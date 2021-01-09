@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status, Response
 from fastapi import UploadFile, File
 # from ....dependencies.model import Prediction
-from ....dependencies.model import load_image, predict
+from ....dependencies.model import classify_image, load_image
 import numpy as np
 
 router = APIRouter()
@@ -15,11 +15,12 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
         return {'message' : "File format not supported"}
     
     else:
-        # img = predictor.load_image(await image.read())
+        # by functions
+        img = load_image(await image.read())
+        results = classify_image(img)
+
         # results = predictor.predict(img)
 
-        img = load_image(await image.read())
-        results = predict(image)
         reponse.status_code = status.HTTP_202_ACCEPTED
 
 
