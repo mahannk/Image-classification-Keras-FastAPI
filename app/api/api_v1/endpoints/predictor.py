@@ -1,10 +1,11 @@
 from fastapi import APIRouter, status, Response
 from fastapi import UploadFile, File
-from ....dependencies.model import Prediction
+# from ....dependencies.model import Prediction
+from ....dependencies.model import load_image, predict
 import numpy as np
 
 router = APIRouter()
-predictor = Prediction()
+# predictor = Prediction()
 
 @router.post("/")
 async def predict(reponse: Response, image: UploadFile = File(...)):
@@ -16,8 +17,10 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
     else:
         # img = predictor.load_image(await image.read())
         # results = predictor.predict(img)
+
+        img = load_image(await image.read())
+        results = predict(image)
         reponse.status_code = status.HTTP_202_ACCEPTED
-        results = 'Done!'
 
 
     return {"message" : "success", "predictions" : results}
