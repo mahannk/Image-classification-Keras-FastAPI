@@ -1,6 +1,6 @@
 tensorflow-cpu
 fastapi
-Pillow
+opencv-python
 starlette
 gunicorn
 uvicorn
