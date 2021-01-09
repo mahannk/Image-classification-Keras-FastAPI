@@ -47,6 +47,6 @@ All responses will have the form
 
 **General rule for running `main.py`**
 
-- Run `uvicorn main:app --reload` from the command line for local development.
-- Run `gunicorn -k uvicorn.workers.UvicornWorker main:app` for production and server development.
+- Run `uvicorn app.main:app --reload` from the command line for local development.
+- Run `gunicorn -k uvicorn.workers.UvicornWorker app.main:app` for production and server development.
 
