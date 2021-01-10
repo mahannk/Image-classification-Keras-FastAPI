@@ -1,7 +1,8 @@
 from fastapi import APIRouter, status, Response
 from fastapi import UploadFile, File
-from ....dependencies.model import Prediction
+from app import Prediction
 import numpy as np
+
 
 router = APIRouter()
 predictor = Prediction() 
