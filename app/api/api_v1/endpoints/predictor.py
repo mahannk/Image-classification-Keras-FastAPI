@@ -8,7 +8,6 @@ predictor = Prediction()
 
 @router.post("/")
 async def predict(reponse: Response, image: UploadFile = File(...)):
-    global predictor
 
     if image.content_type not in ('image/jpeg', 'image/jpg', 'image/png'):
         reponse.status_code = status.HTTP_415_UNSUPPORTED_MEDIA_TYPE
