@@ -21,5 +21,5 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
         reponse.status_code = status.HTTP_202_ACCEPTED
 
 
-    return {"message" : "success", "predictions" : "DONE"}
+    return {"message" : "success", "predictions" : results}
 
