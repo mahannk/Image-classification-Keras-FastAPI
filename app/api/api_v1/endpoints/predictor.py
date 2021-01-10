@@ -21,3 +21,4 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
 
 
     return {"message" : "success", "predictions" : results}
+
