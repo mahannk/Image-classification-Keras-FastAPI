@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT -k uvicorn.workers.UvicornWorker app.main:app --preload
+web: gunicorn --bind 0.0.0.0:$PORT -k uvicorn.workers.UvicornWorker app.main:app
