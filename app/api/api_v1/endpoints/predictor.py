@@ -1,10 +1,11 @@
 from fastapi import APIRouter, status, Response
 from fastapi import UploadFile, File
-
+from ....dependencies.model import Prediction
 import numpy as np
 
+
 router = APIRouter()
-predictor = None 
+predictor = Prediction() 
 
 @router.post("/")
 async def predict(reponse: Response, image: UploadFile = File(...)):
@@ -15,11 +16,6 @@ async def predict(reponse: Response, image: UploadFile = File(...)):
         return {'message' : "File format not supported"}
     
     else:
-        if predictor is None:
-            from ....dependencies.model import Prediction
-            predictor = Prediction()
-
-
         img = predictor.load_image(await image.read())
         results = predictor.predict(img)
 

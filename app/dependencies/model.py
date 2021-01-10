@@ -6,7 +6,7 @@ import cv2
 class Prediction:
 
     def __init__(self):
-        self.model = NASNetMobile()
+        self.model = NASNetMobile(weights="imagenet")
     
     @staticmethod
     def load_image(image):
