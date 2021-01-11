@@ -1,6 +1,9 @@
 fastapi==0.63.0
 Markdown==3.3.3
 opencv-python==4.5.1.48
+Pillow==8.1.0
 python-multipart==0.0.5
-# tensorflow-cpu==2.4.0
+tensorflow-cpu==2.4.0
 uvicorn==0.13.3
+
+
